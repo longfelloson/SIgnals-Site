@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Trade Signals GoldPulse</title>
+    <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+    <h1 onclick="logoutUser()" id="loginOutButton">Logout</h1>
+    <form id="signalForm">
+        <label for="type_">Type:</label>
+        <select id="type_" name="signal" required>
+            <option value="BUY">BUY</option>
+            <option value="SELL">SELL</option>
+            <option value="PENDING_BUY">PENDING BUY</option>
+            <option value="PENDING_SELL">PENDING SELL</option>
+        </select>
+
+        <label for="price">Target Price (for pending orders):</label>
+        <input type="number" id="price" name="price" step="0.01" required>
+
+        <label for="tp">Take Profit (TP):</label>
+        <input type="number" id="tp" name="tp" step="0.01" required>
+
+        <label for="sl">Stop Loss (SL):</label>
+        <input type="number" id="sl" name="sl" step="0.01" required>
+
+        <button onclick="sendSignal()" type="button">Send signal</button>
+        <button onclick="deleteAllSignals()" type="button">Delete signals</button>
+<!--        <button onclick="closeAllSignals()" type="button">Close signals</button>-->
+    </form>
+    <script src="/static/js/login.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
